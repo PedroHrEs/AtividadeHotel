@@ -51,13 +51,17 @@ public class ReservaDTO {
         this.id = obj.getId();
         this.dataCheckin = obj.getDataCheckin();
         this.dataCheckout = obj.getDataCheckout();
-        this.valor = obj.getValor();
         this.statusReserva = obj.getStatusReserva().getId();
         this.tipoQuarto = obj.getTipoQuarto().getId();
         this.atendente = obj.getAtendente().getId();
         this.reservante = obj.getReservante().getId();
         this.nomeAtendente = obj.getAtendente().getNome();
         this.nomeReservante = obj.getReservante().getNome();
+        if(this.tipoQuarto.equals(0) || this.tipoQuarto.equals(2)){
+            setValor(new BigDecimal("120.00"));
+        }else{
+            setValor(new BigDecimal("80.00"));
+        }
     }
 
     public UUID getId() {
