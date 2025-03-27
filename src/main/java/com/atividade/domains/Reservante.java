@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,11 +23,13 @@ public class Reservante extends Pessoa{
 
     public Reservante(Long id, String nome, String cpf, String email, String senha) {
         super(id, nome, cpf, email, senha);
+        setDataCriacao(LocalDate.now());
         addTipoPessoa(TipoPessoa.CLIENTE);
     }
 
     public Reservante(){
         super();
+        setDataCriacao(LocalDate.now());
         addTipoPessoa(TipoPessoa.CLIENTE);
     }
     public Reservante(ReservanteDTO obj){

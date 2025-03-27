@@ -51,7 +51,7 @@ public class ReservanteDTO {
         this.cpf = obj.getCpf();
         this.email = obj.getEmail();
         this.senha = obj.getSenha();
-        this.dataCriacao = obj.getDataCriacao();
+        this.dataCriacao = LocalDate.now();
         this.tipoPessoa.stream().map(TipoPessoa::toEnum).collect(Collectors.toSet());
     }
 
