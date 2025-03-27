@@ -21,7 +21,7 @@ public class Aluguel {
     private Long id;
 
     @JsonFormat (pattern = "dd/MM/YYYY")
-    private LocalDate dataInicio;
+    private LocalDate dataInicio = LocalDate.now();
 
 
     @JsonFormat (pattern = "dd/MM/yyyy")

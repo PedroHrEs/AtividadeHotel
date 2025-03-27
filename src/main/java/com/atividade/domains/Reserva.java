@@ -42,9 +42,8 @@ public class Reserva {
     public Reserva() {
     }
 
-    public Reserva(UUID id, BigDecimal valor, StatusReserva statusReserva, TipoQuarto tipoQuarto, Atendente atendente, Reservante reservante) {
+    public Reserva(UUID id, StatusReserva statusReserva, TipoQuarto tipoQuarto, Atendente atendente, Reservante reservante) {
         this.id = id;
-        this.valor = valor;
         this.statusReserva = statusReserva;
         this.tipoQuarto = tipoQuarto;
         this.atendente = atendente;
