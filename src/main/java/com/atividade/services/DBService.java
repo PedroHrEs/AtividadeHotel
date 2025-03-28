@@ -36,6 +36,9 @@ public class DBService {
     @Autowired
     private ReservaRepository reservaRepo;
 
+    @Autowired
+    private VeiculoRepository veiculoRepo;
+
     public void initDB(){
 
         Cliente cliente01 = new Cliente(null,"pedro", "12322", "11212", "pedro@email");
@@ -67,5 +70,9 @@ public class DBService {
         reservanteRepo.save(reser02);
         reservaRepo.save(reserva01);
         reservaRepo.save(reserva02);
+
+        Veiculo veiculo01 = new Veiculo(null, "golf", LocalDate.of(2003, 12,24), new BigDecimal("10000.000"), "pedro", "123123");
+
+        veiculoRepo.save(veiculo01);
     }
 }
