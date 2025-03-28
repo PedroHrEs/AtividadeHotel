@@ -31,8 +31,8 @@ public class VeiculoResource {
     }
 
     @GetMapping(value = "/cpfproprietario/{cpfproprietario}")
-    public ResponseEntity<VeiculoDTO> findByCpfProprietario(@PathVariable String cpf) {
-        Veiculo obj = this.veiculoService.findByCpfProprietario(cpf);
+    public ResponseEntity<VeiculoDTO> findByCpfProprietario(@PathVariable String cpfProprietario) {
+        Veiculo obj = this.veiculoService.findByCpfProprietario(cpfProprietario);
         return ResponseEntity.ok().body(new VeiculoDTO(obj));
     }
 

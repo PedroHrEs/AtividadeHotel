@@ -71,7 +71,7 @@ public class DBService {
         reservaRepo.save(reserva01);
         reservaRepo.save(reserva02);
 
-        Veiculo veiculo01 = new Veiculo(null, "golf", LocalDate.of(2003, 12,24), new BigDecimal("10000.000"), "pedro", "123123");
+        Veiculo veiculo01 = new Veiculo(null, "golf", LocalDate.of(2003, 12,24), 1222322.5, "pedro", "123123");
 
         veiculoRepo.save(veiculo01);
     }

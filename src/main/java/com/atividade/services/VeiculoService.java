@@ -1,7 +1,5 @@
 package com.atividade.services;
 
-
-
 import com.atividade.domains.Veiculo;
 import com.atividade.domains.dtos.VeiculoDTO;
 import com.atividade.repositories.VeiculoRepository;
@@ -34,13 +32,13 @@ public class VeiculoService {
         dto.setId(null);
         validaVeiculo(dto);
         Veiculo obj = new Veiculo(dto);
-        return (Veiculo) veiculoRepo.save(obj);
+        return veiculoRepo.save(obj);
     }
     public Veiculo update(Long id, VeiculoDTO objDto){
         objDto.setId(id);
         Veiculo oldObj = findById(id);
         oldObj = new Veiculo(objDto);
-        return (Veiculo) veiculoRepo.save(oldObj);
+        return veiculoRepo.save(oldObj);
     }
     public void delete(Long id){
         Veiculo obj = findById(id);

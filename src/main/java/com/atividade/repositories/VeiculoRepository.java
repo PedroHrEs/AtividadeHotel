@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 @Repository
-public interface VeiculoRepository extends JpaRepository {
-    Optional<Veiculo> findByCpfProprietario(String cpf);
+public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
+    Optional<Veiculo> findByCpfProprietario(String cpfProprietario);
 }
