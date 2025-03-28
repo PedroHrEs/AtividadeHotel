@@ -20,8 +20,8 @@ public class VeiculoDTO {
     private LocalDate dataAquisicao;
 
     @NotNull(message="O campo Valor aquisição não pode ser nulo")
-    @Digits(integer = 15, fraction = 3)
-    private BigDecimal valorAquisicao;
+
+    private double valorAquisicao;
     @NotBlank(message="O campo Nome do proprietario não pode ser vazio")
     @NotNull(message="O campo Nome do proprietaro não pode ser nulo")
     private String nomeProprietario;
@@ -64,11 +64,11 @@ public class VeiculoDTO {
         this.dataAquisicao = dataAquisicao;
     }
 
-    public @NotNull(message="O campo Valor aquisição não pode ser nulo") @Digits(integer = 15, fraction = 3) BigDecimal getValorAquisicao() {
+    public @NotNull(message="O campo Valor aquisição não pode ser nulo") double getValorAquisicao() {
         return valorAquisicao;
     }
 
-    public void setValorAquisicao(@NotNull(message="O campo Valor aquisição não pode ser nulo") @Digits(integer = 15, fraction = 3) BigDecimal valorAquisicao) {
+    public void setValorAquisicao(@NotNull(message="O campo Valor aquisição não pode ser nulo") double valorAquisicao) {
         this.valorAquisicao = valorAquisicao;
     }
 

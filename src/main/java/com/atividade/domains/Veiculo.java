@@ -23,8 +23,8 @@ public class Veiculo {
     private String descricao;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataAquisicao;
-    @Digits(integer = 15, fraction = 3)
-    private BigDecimal valorAquisicao;
+    @NotNull
+    private double valorAquisicao;
     @NotNull
     @NotBlank
     private String nomeProprietario;
@@ -36,7 +36,7 @@ public class Veiculo {
     public Veiculo() {
     }
 
-    public Veiculo(Long id, String descricao, LocalDate dataAquisicao, BigDecimal valorAquisicao, String nomeProprietario, String cpfProprietario) {
+    public Veiculo(Long id, String descricao, LocalDate dataAquisicao, double valorAquisicao, String nomeProprietario, String cpfProprietario) {
         this.id = id;
         this.descricao = descricao;
         this.dataAquisicao = dataAquisicao;
@@ -78,11 +78,11 @@ public class Veiculo {
         this.dataAquisicao = dataAquisicao;
     }
 
-    public BigDecimal getValorAquisicao() {
+    public double getValorAquisicao() {
         return valorAquisicao;
     }
 
-    public void setValorAquisicao(BigDecimal valorAquisicao) {
+    public void setValorAquisicao(double valorAquisicao) {
         this.valorAquisicao = valorAquisicao;
     }
 
