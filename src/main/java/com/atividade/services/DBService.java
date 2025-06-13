@@ -7,6 +7,7 @@ import com.atividade.domains.enums.StatusReserva;
 import com.atividade.domains.enums.TipoQuarto;
 import com.atividade.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -39,6 +40,9 @@ public class DBService {
     @Autowired
     private VeiculoRepository veiculoRepo;
 
+    @Autowired
+    private PasswordEncoder encoder;
+
     public void initDB(){
 
         Cliente cliente01 = new Cliente(null,"pedro", "12322", "11212", "pedro@email");
@@ -58,9 +62,9 @@ public class DBService {
         carroRepo.save(carro02);
         aluguelRepo.save(aluguel01);
 
-        Atendente aten01 = new Atendente(null, "Pedro", "02569095099", "pedro@email.com", "senha123");
-        Reservante reser01 = new Reservante(null, "Carlos", "02569095044", "carlos@email.com", "senha123");
-        Reservante reser02 = new Reservante(null, "Paulo", "8930824000", "paulo@email.com", "senha123");
+        Atendente aten01 = new Atendente(null, "Pedro", "02569095099", "pedro@email.com", encoder.encode("123"));
+        Reservante reser01 = new Reservante(null, "Carlos", "02569095044", "carlos@email.com", encoder.encode("123"));
+        Reservante reser02 = new Reservante(null, "Paulo", "8930824000", "paulo@email.com", encoder.encode("123"));
 
         Reserva reserva01 = new Reserva(null, StatusReserva.CHECKIN, TipoQuarto.UMAPESSOA,aten01, reser01);
         Reserva reserva02 = new Reserva(null, StatusReserva.RESERVADO, TipoQuarto.CASAL,aten01, reser02);
